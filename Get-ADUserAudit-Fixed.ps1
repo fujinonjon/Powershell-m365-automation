@@ -1,5 +1,5 @@
 # ============================================================================
-# Script: Get-ADUserAudit.ps1
+# Script: Get-ADUserAudit-Fixed.ps1
 # Purpose: Audit Active Directory for inactive users, stale passwords, disabled accounts
 # Use Case: Compliance reporting, security hygiene, identifying accounts to deactivate
 # Author: Jon
