@@ -52,10 +52,11 @@ if ($TargetOU) {
 
 # Retrieve all enabled user accounts
 try {
-    $adUsers = Get-ADUser @getADUserParams
-    Write-Host "✓ Retrieved $($adUsers.Count) enabled user accounts" -ForegroundColor Green
-} catch {
-    Write-Host "ERROR: Could not query Active Directory - $($_.Exception.Message)" -ForegroundColor Red
+    Import-Module ActiveDirectory -ErrorAction Stop
+    Write-Host "✓ Active Directory module loaded" -ForegroundColor Green
+} 
+catch {
+    Write-Host "ERROR: Active Directory module not found" -ForegroundColor Red
     exit
 }
 
