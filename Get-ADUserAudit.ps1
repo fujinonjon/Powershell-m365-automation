@@ -131,10 +131,10 @@ Write-Host "==================================================`n" -ForegroundCol
 
 # Display top findings
 Write-Host "Top 10 Inactive Accounts:" -ForegroundColor Yellow
-$inactiveUsers | Sort-Object DaysInactive -Descending | Select-Object -First 10 | Format-Table Username, DisplayName, DaysInactive, RiskLevel -AutoSize
+$inactiveUsers | Sort-Object DaysInactive -Descending | Select-Object Username, DisplayName, DaysInactive, RiskLevel -First 10 | Format-Table -AutoSize
 
 Write-Host "`nTop 10 Stale Password Accounts:" -ForegroundColor Yellow
-$stalePasswordUsers | Sort-Object DaysSincePasswordChange -Descending | Select-Object -First 10 | Format-Table Username, DisplayName, DaysSincePasswordChange, RiskLevel -AutoSize
+$stalePasswordUsers | Sort-Object DaysSincePasswordChange -Descending | Select-Object Username, DisplayName, DaysSincePasswordChange, RiskLevel -First 10 | Format-Table -AutoSize
 
 # Export to CSV if requested
 if ($ExportToCSV) {
